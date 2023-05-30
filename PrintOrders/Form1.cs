@@ -34,6 +34,7 @@ namespace PrintOrders
 
         private void BtnPrint_Click(object sender, EventArgs e)
             {
+
             Orders obj = ordersBindingSource.Current as Orders;
             if (obj != null)
                 {
@@ -41,12 +42,16 @@ namespace PrintOrders
                     {
                     if (db.State == ConnectionState.Closed)
                         db.Open();
-                    string query = "SELECT o.ID AS OrderID, c.Name AS ClientName, c.CPF, ca.ID AS CarID, ca.Brand, ca.Model, ca.Price, o.PurchaseDate" +
-                               "FROM Orders o " +
-                               "JOIN Clients c ON c.ID = o.ClientID " +
-                               "JOIN Cars ca ON o.CarID = ca.ID" +
-                               $"WHERE o.ID = {obj.OrderID}";
+                    string query = "SELECT o.ID AS OrderID, c.Name AS ClientName, c.CPF, ca.ID AS CarID, ca.Brand, ca.Model, ca.FabricationDate, ca.Price, o.PurchaseDate " +
+                                   "FROM Orders o " +
+                                   "JOIN Clients c ON c.ID = o.ClientID " +
+                                   "JOIN Cars ca ON o.CarID = ca.ID " +
+                                   $"WHERE o.ID = '{obj.OrderID}'";
                     List<OrderDetail> list = db.Query<OrderDetail>(query, commandType: CommandType.Text).ToList();
+                    using (frmPrint frm = new frmPrint(obj, list))
+                        {
+                        frm.ShowDialog();
+                        }
                     }
                 }
 

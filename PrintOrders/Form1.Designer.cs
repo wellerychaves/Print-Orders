@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.BtnLoad = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtToDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BtnPrint = new System.Windows.Forms.Button();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +38,12 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtToDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -73,56 +73,8 @@
             this.dataGridView1.DataSource = this.ordersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(19, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 361);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 359);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // dtFromDate
-            // 
-            this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFromDate.Location = new System.Drawing.Point(52, 13);
-            this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(103, 20);
-            this.dtFromDate.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "From:";
-            // 
-            // dtToDate
-            // 
-            this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtToDate.Location = new System.Drawing.Point(207, 13);
-            this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(103, 20);
-            this.dtToDate.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(171, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "To:";
-            // 
-            // BtnPrint
-            // 
-            this.BtnPrint.Location = new System.Drawing.Point(787, 415);
-            this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(75, 23);
-            this.BtnPrint.TabIndex = 0;
-            this.BtnPrint.Text = "Print";
-            this.BtnPrint.UseVisualStyleBackColor = true;
-            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataSource = typeof(PrintOrders.Orders);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -166,17 +118,66 @@
             this.purchaseDateDataGridViewTextBoxColumn.HeaderText = "PurchaseDate";
             this.purchaseDateDataGridViewTextBoxColumn.Name = "purchaseDateDataGridViewTextBoxColumn";
             // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataSource = typeof(PrintOrders.Orders);
+            // 
+            // dtFromDate
+            // 
+            this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFromDate.Location = new System.Drawing.Point(52, 13);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.Size = new System.Drawing.Size(103, 20);
+            this.dtFromDate.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "From:";
+            // 
+            // dtToDate
+            // 
+            this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtToDate.Location = new System.Drawing.Point(207, 13);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.Size = new System.Drawing.Size(103, 20);
+            this.dtToDate.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(171, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "To:";
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.Location = new System.Drawing.Point(694, 413);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(75, 23);
+            this.BtnPrint.TabIndex = 4;
+            this.BtnPrint.TabStop = false;
+            this.BtnPrint.Text = "Print";
+            this.BtnPrint.UseVisualStyleBackColor = true;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 450);
+            this.Controls.Add(this.BtnPrint);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtToDate);
             this.Controls.Add(this.dtFromDate);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BtnPrint);
             this.Controls.Add(this.BtnLoad);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -196,7 +197,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtToDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnPrint;
+
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
@@ -205,6 +206,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn purchaseDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button BtnPrint;
         }
 }
 
